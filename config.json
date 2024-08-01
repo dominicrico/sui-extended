@@ -1,25 +1,25 @@
 {
-  "language": "en-GB",
+  "language": "de-DE",
   "greetings": {
-    "morning": "Good Morning",
-    "afternoon": "Good Afternoon",
-    "evening": "Good Evening",
-    "night": "Good Night"
+    "morning": "Guten Morgen",
+    "afternoon": "Guten Tag",
+    "evening": "Guten Abend",
+    "night": "Gute Nacht"
   },
-  "useOauth2Proxy": false,
-  "useAppCategories": false,
-  "oauth2ProxyBaseUrl": "",
-  "userPermissionKey": "",
+  "useOauth2Proxy": true,
+  "useAppCategories": true,
+  "oauth2ProxyBaseUrl": "https://auth.fluffyv.dev/",
+  "userPermissionKey": "groups",
   "withApps": true,
   "withLinks": true,
   "withSearch": true,
   "hideSettings": false,
   "labels": {
-    "bookmarks": "Bookmarks",
-    "applications": "Applications"
+    "bookmarks": "Lesezeichen",
+    "applications": "Anwendungen"
   },
-  "backgroundImage": "",
-  "defaultTheme": "backboard",
+  "backgroundImage": "/city_background.jpg",
+  "defaultTheme": "cab",
   "themes": {
     "blackboard": {
       "color-background": "#1a1a1a",

@@ -34,20 +34,14 @@ const fetchAndRender = async (fileName) => {
 }
 
 const fetchUser = async () => {
-  /* const res = await fetch(
+  const res = await fetch(
     `${config.oauth2ProxyBaseUrl.replace(/\/$/, '')}/oauth2/userinfo`,
     {
       credentials: 'include'
     }
   )
-  const data = await res.json() */
 
-  return {
-    user: '8813348c-7723-4f4c-a759-cb7c94b6747c',
-    email: 'hello@coderocket.me',
-    groups: ['/dev', '/projektleitung', '/supporter', '/teamleitung'],
-    preferredUsername: 'mmenistr'
-  }
+  return await res.json()
 }
 
 const fetchConfig = async () => {

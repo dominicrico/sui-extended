@@ -10,7 +10,7 @@ const date = () => {
   document.getElementById('header_date').innerHTML = date
 }
 
-const greet = () => {
+const greet = async () => {
   const currentTime = new Date()
   const greet = Math.floor(currentTime.getHours() / 6)
   switch (greet) {
@@ -30,6 +30,15 @@ const greet = () => {
         config.greetings.evening
       break
   }
+
+  if (config.useOauth2Proxy) {
+    const user = await fetchUser()
+    document.getElementById(
+      'header_greet'
+    ).innerHTML += `, ${user.preferredUsername}`
+  }
+
+  document.getElementById('header_greet').innerHTML += '!'
 }
 
 const loadFunctions = async () => {

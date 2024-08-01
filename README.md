@@ -6,6 +6,8 @@ _A startpage for your server and / or new tab page_
 
 [More screenshots](https://imgur.com/a/FDVRIyw)
 
+[Extended Options](https://imgur.com/a/69CwxxW)
+
 ### Deploy with Docker compose
 
 #### Prerequisites:
@@ -16,17 +18,18 @@ _A startpage for your server and / or new tab page_
 #### Install:
 
 - `git clone` this repository
-- Build and bring up with `docker-compose up -d`
+- Build and bring up with `docker compose up -d`
 - The page should be available at `http://localhost:4000`
 
-To run at a different port open edit docker-compose.yml:
-
-    ports:
-          - 4000:80
+To run at a different port edit the docker-compose.yml
+```yaml
+  ports:
+   - 4000:80
+```
 
 #### Install pull from git variant:
 
-- refreshs source code every 5 minutes from master branch you provided - convenience feature for lacy devs
+- refresh the source code every 5 minutes from master branch you provided - convenience feature for lazy devs
 - `git clone` this repository
 - build image `docker build -f DockerfilePullFromGit -t sui:latest .`
 - run image with `docker run -e GITURL='https://x:ghp_x@github.com/jeroenpardon/sui.git' -p 8081:80 sui:latest`

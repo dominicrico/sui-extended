@@ -32,7 +32,7 @@ To run at a different port edit the docker-compose.yml
 - refresh the source code every 5 minutes from master branch you provided - convenience feature for lazy devs
 - `git clone` this repository
 - build image `docker build -f DockerfilePullFromGit -t sui:latest .`
-- run image with `docker run -e GITURL='https://x:ghp_x@github.com/jeroenpardon/sui.git' -p 8081:80 sui:latest`
+- run image with `docker run -e GITURL='https://x:ghp_x@github.com/dominicrico/sui-extended.git' -p 8081:80 sui:latest`
 - can be run also with a private repository by setting username:api-key@ in the url (see above example). Otherwise remove this part of the url.
 
 ### Customization
@@ -145,3 +145,7 @@ Please note:
 
 - No `http://` in the URL
 - No `,` at the end of the last bookmark in a category and at the end of the last category
+
+
+#### SUI is created by
+[jeroenpardon](https://github.com/jeroenpardon/sui)

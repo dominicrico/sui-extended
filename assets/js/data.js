@@ -37,7 +37,10 @@ const fetchUser = async () => {
   const res = await fetch(
     `${config.oauth2ProxyBaseUrl.replace(/\/$/, '')}/oauth2/userinfo`,
     {
-      credentials: 'include'
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      }
     }
   )
 

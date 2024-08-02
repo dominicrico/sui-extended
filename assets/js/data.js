@@ -34,15 +34,12 @@ const fetchAndRender = async (fileName) => {
 }
 
 const fetchUser = async () => {
-  const res = await fetch(
-    `${config.oauth2ProxyBaseUrl.replace(/\/$/, '')}/oauth2/userinfo`,
-    {
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+  const res = await fetch(oauth2UserInfoURL, {
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json'
     }
-  )
+  })
 
   return await res.json()
 }
@@ -83,7 +80,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('modal_init').style.display = 'none'
   }
 
-  const user = config.useOauth2Proxy ? await fetchUser() : null
+  const user = config.useOauth2 ? await fetchUser() : null
 
   Handlebars.registerHelper('hasGroup', (groups) => {
     if (!groups || groups.length === 0) return true

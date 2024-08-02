@@ -6,9 +6,9 @@
     "evening": "Good Evening",
     "night": "Good Night"
   },
-  "useOauth2Proxy": false,
+  "useOauth2": false,
   "useAppCategories": false,
-  "oauth2ProxyBaseUrl": "",
+  "oauth2UserInfoURL": "",
   "userPermissionKey": "",
   "withApps": true,
   "withLinks": true,

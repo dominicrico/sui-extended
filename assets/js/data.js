@@ -26,6 +26,10 @@ const fetchAndRender = async (fileName) => {
           .map((app) => {
             return {
               ...app,
+              url:
+                app.url.includes('http://') || app.url.includes('https://')
+                  ? app.url
+                  : `http://${app.url}`,
               url_stripped: app.url.replace(/^\w+:\/\/(.+)\?.+/, '$1')
             }
           })

@@ -61,11 +61,16 @@ const fetchConfig = async () => {
     document.getElementById('modal-theme').innerHTML += rendered
   }
 
-  if (config.backgroundImage && config.backgroundImage.length > 0)
-    document.body.style =
-      "background-image: url('" +
-      config.backgroundImage +
-      "'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"
+  if (config.backgroundImage && config.backgroundImage.length > 0) {
+    document.documentElement.style.setProperty(
+      'background-image',
+      `url(${config.backgroundImage}`
+    )
+    document.documentElement.style.setProperty('background-size', `cover`)
+    document.documentElement.style.setProperty('background-repeat', `no-repeat`)
+    document.documentElement.style.setProperty('background-attachment', `fixed`)
+    document.body.style.setProperty('background', `transparent`)
+  }
 
   return true
 }

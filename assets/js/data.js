@@ -100,4 +100,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   setValueFromLocalStorage('color-background')
   setValueFromLocalStorage('color-text-pri')
   setValueFromLocalStorage('color-text-acc')
+
+  date()
+  greet()
 })

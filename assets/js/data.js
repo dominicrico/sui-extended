@@ -21,7 +21,14 @@ const fetchAndRender = async (fileName) => {
     const sortedData = categories.map((category) => {
       return {
         category,
-        apps: data.apps.filter((app) => app.category === category)
+        apps: data.apps
+          .filter((app) => app.category === category)
+          .map((app) => {
+            return {
+              ...app,
+              url_stripped: app.url.replace(/^\w+:\/\/(.+)\?.+/, '$1')
+            }
+          })
       }
     })
 

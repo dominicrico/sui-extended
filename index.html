@@ -102,8 +102,8 @@
                       <span class="iconify icon" data-icon="mdi-{{icon}}"></span>
                   </div>
                   <div class="apps_text">
-                      <a href="http://{{url}}" {{#if target}}target="{{target}}"{{/if}} >{{name}}</a>
-                      <span id="app-address">{{url}}</span>
+                      <a href="{{url}}" {{#if target}}target="{{target}}"{{/if}} >{{name}}</a>
+                      <span id="app-address">{{url_stripped}}</span>
                   </div>
               </div>
             {{/if}}

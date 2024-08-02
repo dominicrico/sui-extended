@@ -34,12 +34,12 @@ const fetchAndRender = async (fileName) => {
 }
 
 const fetchUser = async () => {
-  const res = await fetch(
-    `${config.oauth2ProxyBaseUrl.replace(/\/$/, '')}/oauth2/userinfo`,
-    {
-      credentials: 'include'
+  const res = await fetch(oauth2UserInfoURL, {
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json'
     }
-  )
+  })
 
   return await res.json()
 }
@@ -58,11 +58,16 @@ const fetchConfig = async () => {
     document.getElementById('modal-theme').innerHTML += rendered
   }
 
-  if (config.backgroundImage && config.backgroundImage.length > 0)
-    document.body.style =
-      "background-image: url('" +
-      config.backgroundImage +
-      "'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"
+  if (config.backgroundImage && config.backgroundImage.length > 0) {
+    document.documentElement.style.setProperty(
+      'background-image',
+      `url(${config.backgroundImage}`
+    )
+    document.documentElement.style.setProperty('background-size', `cover`)
+    document.documentElement.style.setProperty('background-repeat', `no-repeat`)
+    document.documentElement.style.setProperty('background-attachment', `fixed`)
+    document.body.style.setProperty('background', `transparent`)
+  }
 
   return true
 }
@@ -75,7 +80,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('modal_init').style.display = 'none'
   }
 
-  const user = config.useOauth2Proxy ? await fetchUser() : null
+  const user = config.useOauth2 ? await fetchUser() : null
 
   Handlebars.registerHelper('hasGroup', (groups) => {
     if (!groups || groups.length === 0) return true
@@ -95,4 +100,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   setValueFromLocalStorage('color-background')
   setValueFromLocalStorage('color-text-pri')
   setValueFromLocalStorage('color-text-acc')
+
+  date()
+  greet()
 })

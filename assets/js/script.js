@@ -40,8 +40,3 @@ const greet = async () => {
 
   document.getElementById('header_greet').innerHTML += '!'
 }
-
-const loadFunctions = async () => {
-  date()
-  greet()
-}

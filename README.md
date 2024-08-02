@@ -48,9 +48,9 @@ Change the config.json to your likings.
 | `greetings.afternoon` | `Good Afternoon` | Greeting text for the afternoon.                |
 | `greetings.evening`   | `Good Evening`   | Greeting text for the evening.                  |
 | `greetings.night`     | `Good Night`     | Greeting text for the night.                    |
-| `useOauth2Proxy`      | `false`          | Whether to use OAuth2 Proxy for authentication. |
+| `useOauth2`           | `false`          | Whether to use OAuth2 Proxy for authentication. |
 | `useAppCategories`    | `false`          | Whether to categorize applications.             |
-| `oauth2ProxyBaseUrl`  | `""`             | Base URL for the OAuth2 Proxy.                  |
+| `oauth2UserInfoURL`   | `""`             | URL to call for user info.                      |
 | `userPermissionKey`   | `""`             | Key used for user permissions on userinfo call. |
 | `withApps`            | `true`           | Whether to show applications.                   |
 | `withLinks`           | `true`           | Whether to show links.                          |
